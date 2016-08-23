@@ -14,6 +14,7 @@ $('.btn-get-ticket').on("click", function (e) {
 	e.preventDefault();
 	let name = $('#name').val();
 	let deviceType = $('#device-type').val();
+	let userCompany = $('#user-company').val();
 	let plant = $('.usr-plant__option--selected').text();
 
 	if (name === '') {
@@ -28,6 +29,7 @@ $('.btn-get-ticket').on("click", function (e) {
 		"_id": shortid.generate(),
 		"name": name,
 		"deviceType": deviceType,
+		"userCompany": userCompany,
 		"plant": plant
 	}, function(ticket) {
 		$('#name').val('');
@@ -120,6 +122,7 @@ function updateTicketList(doc) {
 	$('.tickets-list').append(`
 		<div class="tickets-list__box">
       <span class="js-ticket-name">${doc.name}</span>
+      <span class="js-ticket-name">${doc.userCompany}</span>
       <span class="js-ticket-device-type">${doc.deviceType}</span>
       <span class="js-ticket-plant">${doc.plant}</span>
       <span class="js-ticket-id">${doc.ticket_id}</span>
