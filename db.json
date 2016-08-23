@@ -1,0 +1,59 @@
+{
+  "tickets": {
+    "used": [
+      "5872-5863",
+      "4938-8582",
+      "6994-9589",
+      "5891-4871",
+      "1239-7821"
+    ],
+    "active": []
+  },
+  "users": [
+    {
+      "_id": "B1PuGsv9",
+      "name": "Rogelio Feliciano",
+      "deviceType": "Android Phone",
+      "plant": "P7",
+      "ticket_id": "5872-5863",
+      "start": "2016-08-21T21:51:43.384Z",
+      "end": "2016-08-28T21:51:43.384Z"
+    },
+    {
+      "_id": "B1odzovc",
+      "name": "Carlos Perez",
+      "deviceType": "Android Phone",
+      "plant": "P7",
+      "ticket_id": "4938-8582",
+      "start": "2016-08-21T21:51:46.885Z",
+      "end": "2016-08-28T21:51:46.885Z"
+    },
+    {
+      "_id": "B1JFGivc",
+      "name": "Andrea Sorares",
+      "deviceType": "Android Phone",
+      "plant": "P7",
+      "ticket_id": "6994-9589",
+      "start": "2016-08-21T21:51:50.865Z",
+      "end": "2016-08-28T21:51:50.865Z"
+    },
+    {
+      "_id": "rkmYfiPq",
+      "name": "Pedro Sosa",
+      "deviceType": "Android Phone",
+      "plant": "P7",
+      "ticket_id": "5891-4871",
+      "start": "2016-08-21T21:51:54.667Z",
+      "end": "2016-08-28T21:51:54.667Z"
+    },
+    {
+      "_id": "SJw-Njwq",
+      "name": "Mujer Sandia",
+      "deviceType": "Android Phone",
+      "plant": "P7",
+      "ticket_id": "1239-7821",
+      "start": "2016-08-21T21:58:22.696Z",
+      "end": "2016-08-28T21:58:22.696Z"
+    }
+  ]
+}

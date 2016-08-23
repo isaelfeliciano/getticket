@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title style="display: none;">Get a Ticket Fenix MFG</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body id="top">
+
+<div class="not-visible flashmessage center-align-absolute center-text"></div>
+
+<img src="img/fenix-logo.png" class="img-logo center-align-absolute">
+
+<div id="first-page">
+	<a href="#second-page">Second Page</a>
+  <form class="center-align">
+      <fieldset>
+          <label class="center-align" for="name">Full Name</label>
+          <input class="center-align" type="text" id="name" placeholder="Jhon Doe">
+
+          <label class="center-align" for="device-type">Device Type</label>
+          <select class="center-align" id="device-type">
+              <option value="Android Phone" selected="selected">Android Phone</option>
+              <option value="Android Tablet">Android Tablet</option>
+              <option value="Apple Phone">Apple Phone</option>
+              <option value="Apple Tablet">Apple Tablet</option>
+              <option value="Laptop or Desktop">Laptop or Desktop</option>
+          </select>
+
+          <div class="usr-plant center-align center-text">
+              <h2 class="usr-plant__label">What plant?</h2>
+              <span class="usr-plant__option plant1">P1</span>
+              <span class="usr-plant__option plant1b">P1 B</span>
+              <span class="usr-plant__option plant2">P2</span>
+              <span class="usr-plant__option plant3">P3</span>
+              <span class="usr-plant__option plant4a">P4 A</span>
+              <span class="usr-plant__option plant4b">P4 B</span>
+              <span class="usr-plant__option plant6">P6</span>
+              <span class="usr-plant__option usr-plant__option--selected plant7">P7</span>
+          </div>
+
+          <button class="btn-get-ticket center-align">Get a ticket</button>
+      </fieldset>
+  </form>
+</div>
+  
+<div id="second-page">
+  <a href="#first-page">First Page</a>
+
+  <div class="tickets-list center-text">
+  </div>
+</div>
+  
+<script src="js/jquery.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

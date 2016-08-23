@@ -1,0 +1,115 @@
+/*
+Background #f45844
+*/
+
+*{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: block;
+}
+/* >>>>---- HELPERS ----*/
+.center-align, .center-align-absolute{
+	margin-left: auto;
+	margin-right: auto;
+}
+.center-align-absolute{
+  left: 0;
+  right: 0;
+}
+.center-text{
+	text-align: center;
+}
+
+.padding-sm{
+	padding: 1em;
+}
+.box-radius{
+  border-radius: 5px;
+}
+.not-visible{
+/*  visibility: hidden;*/
+	opacity: 0;
+	-webkit-transition:opacity 1s linear;
+}
+.is-visible{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+/* ---- HELPERS ----<<<<*/
+
+body, html {
+	width: 100%;
+	height: 100%;
+	background: #b8bbc6;
+	overflow: hidden;
+	font-size: 16px;
+	font-family: 'calibri', 'georgia';
+	
+	padding-left: 0.5em;
+}
+
+form {
+	width: 80%;
+	position: relative;
+}
+
+fieldset {
+	
+}
+
+label, h2{
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+input#name, select {
+	width: 75%;
+	position: relative;
+	font-size: 1.5em;
+}
+
+.usr-plant {
+	width: 75%;
+}
+
+.usr-plant__option {
+	width: 11.94%;
+	display: inline-block;
+	text-align: center;
+	padding: 0.5em 1em;
+	color: #FFF;
+	background-color: #1f3064;
+	cursor: pointer;
+}
+.usr-plant__option--selected {
+	border: 3px solid #f5a04c;
+}
+
+.btn-get-ticket {
+	background-color: #f5a04c;
+	border: none;
+	cursor: pointer;
+	color: #FFF;
+	width: 50%;
+	font-size: 1.8em;
+}
+
+/*Flashmessge*/
+.flashmessage{
+  position: absolute;
+  bottom: 4em;
+  width: 80%;
+  
+  background: #fff;
+  border-top: 0.4em solid #04193F;
+
+  z-index: 99999;
+}
+.flashmessage>p{
+  padding: 1em;
+}
+/*Flashmessge*/
