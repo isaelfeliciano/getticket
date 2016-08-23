@@ -1,12 +1,19 @@
 const low = require('lowdb');
 const _ = require('lodash');
-// const db = low('db.json');
+// const dbFile = process.env.GETTICKET_DB;
 const shortid = require('shortid');
+const dbFile = '\\\\dr_nas\\dr_it\\DB_JSON\\db.json';
+
+
+if (!process.env.NW_ENV) {
+	$('a[href="#second-page"]').remove();
+}
+
 
 $('.btn-get-ticket').on("click", function (e) {
 	e.preventDefault();
 	let name = $('#name').val();
-	let deviceType = $('option[selected="selected"]').val();
+	let deviceType = $('#device-type').val();
 	let plant = $('.usr-plant__option--selected').text();
 
 	if (name === '') {
@@ -29,7 +36,7 @@ $('.btn-get-ticket').on("click", function (e) {
 });
 
 var submitForm = function(data, callback) {
-	const db = low('db.json');
+	const db = low(dbFile);
 
 	let now = new Date();
 	let startDate = now.toJSON();
@@ -99,7 +106,7 @@ $('a[href="#second-page"]').on('click', function() {
 });
 
 function populateTicketList() {
-	const db = low('db.json');
+	const db = low(dbFile);
 
 	let userList = db.get('users').value();
 	for (user in userList) {
