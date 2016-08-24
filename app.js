@@ -21,6 +21,10 @@ $('.btn-get-ticket').on("click", function (e) {
 		return nameIsEmpty();
 	}
 
+	if (!/^[a-zA-Z]*$/g.test(name)) {
+		return flashMessage("Letters only, please");
+	}
+
 	if (name.length < 6) {
 		return flashMessage("This don't look like a valid name");
 	}
