@@ -38,9 +38,9 @@ $('.btn-get-ticket').on("click", function (e) {
 		"deviceType": deviceType,
 		"userCompany": userCompany,
 		"plant": plant
-	}, function(ticket) {
+	}, function displayTicket(ticket, name) {
 		$('#name').val('');
-		flashMessageWithCloseBtn(`Ticket ID: ${ticket}`);
+		flashMessageWithCloseBtn(`Ticket ID for ${name}: ${ticket}`);
 	});
 });
 
@@ -79,7 +79,7 @@ var submitForm = function(data, callback) {
 		.pull(ticket[0])
 		.value();
 
-	callback(ticket[0]);
+	callback(ticket[0], data.name);
 }
 
 
