@@ -12,6 +12,7 @@ if (!process.env.NW_ENV) {
 
 $('.btn-get-ticket').on("click", function (e) {
 	e.preventDefault();
+	let db = low(dbFile);
 	let name = $('#name').val();
 	let deviceType = $('#device-type').val();
 	let userCompany = $('#user-company').val();
@@ -21,13 +22,15 @@ $('.btn-get-ticket').on("click", function (e) {
 		return nameIsEmpty();
 	}
 
-	if (!/^[a-zA-Z]*$/g.test(name)) {
+	if (!/^[a-zA-Z\s]*$/g.test(name)) {
 		return flashMessage("Letters only, please");
 	}
 
 	if (name.length < 6) {
 		return flashMessage("This don't look like a valid name");
 	}
+
+	console.log(db.get('users').find({"name": name}).value());
 
 	submitForm({
 		"_id": shortid.generate(),
@@ -37,7 +40,7 @@ $('.btn-get-ticket').on("click", function (e) {
 		"plant": plant
 	}, function(ticket) {
 		$('#name').val('');
-		alert(`Ticket ID: ${ticket}`);
+		flashMessageWithCloseBtn(`Ticket ID: ${ticket}`);
 	});
 });
 
@@ -51,8 +54,7 @@ var submitForm = function(data, callback) {
 	let ticketsActive = db.get('tickets.active').value();
 
 	if (ticketsActive.length < 1) {
-		flashMessage("There is no tickets to give, Contact IT Department");
-		return;
+		return flashMessage("There is no tickets to give, Contact IT Department");
 	}
 
 	let ticket = db.get('tickets.active')
@@ -121,8 +123,8 @@ function populateTicketList() {
 }
 
 function updateTicketList(doc) {
-	doc.start = new Date(doc.start);
-	doc.end = new Date (doc.end);
+	doc.start = new Date(doc.start).toDateString();
+	doc.end = new Date (doc.end).toDateString();
 	$('.tickets-list').append(`
 		<div class="tickets-list__box">
       <span class="js-ticket-name">${doc.name}</span>
@@ -146,5 +148,13 @@ function flashMessage(msg){
 		$('.flashmessage').addClass('not-visible').
 		html('');
 	}, 3000);
+}
+
+function flashMessageWithCloseBtn(msg){
+	$('.flashmessage-with-close-btn').removeClass('no-display');
+	$('.flashmessage-with-close-btn__box p').text(msg);
+	$('.flashmessage-with-close-btn__btn').on('click', function() {
+		$('.flashmessage-with-close-btn').addClass('no-display');
+	});
 }
 // Flash Message

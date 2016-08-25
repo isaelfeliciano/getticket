@@ -32,6 +32,9 @@ Background #f45844
 	opacity: 0;
 	-webkit-transition:opacity 1s linear;
 }
+.no-display {
+	display: none;
+}
 .is-visible{
 	visibility: visible;
 	opacity: 1;
@@ -163,7 +166,16 @@ input#name, select {
 }
 
 /*Flashmessge*/
-.flashmessage{
+.flashmessage-with-close-btn {
+	position: absolute;
+/*	display: none;*/
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.8);;
+	z-index: 99;
+	
+}
+.flashmessage, .flashmessage-with-close-btn__box {
   position: absolute;
   top: 2em;
   width: 80%;
@@ -173,7 +185,33 @@ input#name, select {
 
   z-index: 99999;
 }
-.flashmessage>p{
+
+
+.flashmessage p{
   padding: 1em;
 }
+
+.flashmessage-with-close-btn__box p {
+	padding: 2em;
+}
+
+.flashmessage-with-close-btn__btn {
+	position: absolute;
+	top: -1em;
+	right: -1em;
+	color: #FFF;
+	background-color: #f5a04c;
+	padding: 0.5em 0.7em;
+	border-radius: 50%;
+	cursor: pointer;
+}
 /*Flashmessge*/
+
+@media print {
+	.tickets-list__box {
+	margin-top: 0.3em;
+  	display: inline-block;
+  	width: 40%;
+  	border: 2px solid black;
+}
+}
