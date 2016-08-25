@@ -123,8 +123,8 @@ function populateTicketList() {
 }
 
 function updateTicketList(doc) {
-	doc.start = new Date(doc.start).toDateString();
-	doc.end = new Date (doc.end).toDateString();
+	let startDate = new Date(doc.start).toDateString();
+	let endDate = new Date (doc.end).toDateString();
 	$('.tickets-list').append(`
 		<div class="tickets-list__box">
       <span class="js-ticket-name">${doc.name}</span>
@@ -132,8 +132,8 @@ function updateTicketList(doc) {
       <span class="js-ticket-device-type">${doc.deviceType}</span>
       <span class="js-ticket-plant">${doc.plant}</span>
       <span class="js-ticket-id">${doc.ticket_id}</span>
-      <span class="js-ticket-start-date">From: ${doc.start}</span>
-      <span class="js-ticket-end-date">To: ${doc.end}</span>
+      <span class="js-ticket-start-date">From: ${startDate}</span>
+      <span class="js-ticket-end-date">To: ${endDate}</span>
     </div>
 	`);
 }
