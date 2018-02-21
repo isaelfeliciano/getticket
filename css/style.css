@@ -208,6 +208,10 @@ input#name, select {
 }
 /*Flashmessge*/
 
+.easy-autocomplete {
+	width: 100%;
+}
+
 @media print {
 	.tickets-list__box {
 	margin-top: 0.3em;
